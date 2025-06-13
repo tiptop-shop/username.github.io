@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>طلب عبر واتساب</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      padding: 20px;
+      direction: rtl;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    h2, p {
+      text-align: center;
+      color: #2c3e50;
+    }
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .features {
+      background: #eaf6ea;
+      border: 1px solid #c6e0c6;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      color: #2d6a2d;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 1em;
+      border-radius: 6px;
+      border: 1.5px solid #ccc;
+      transition: border-color 0.3s ease;
+      box-sizing: border-box;
+    }
+    input:focus, select:focus {
+      border-color: #4caf50;
+      outline: none;
+      box-shadow: 0 0 6px #81c784;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #388e3c;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>طلب مقعد تصحيح الظهر من تيب توب</h2>
+  <p>🟢 تيب توب | واتساب: 07838043705</p>
+  
+  <img src="https://i.postimg.cc/yYj5tGZ1/sample-product.jpg" alt="صورة المنتج" />
+
+  <div class="features">
+    ميزات المنتج:<br />
+    - تصميم مريح يدعم تصحيح وضعية الظهر.<br />
+    - مواد عالية الجودة ومتينة.<br />
+    - مناسب للاستخدام اليومي في المنزل أو المكتب.<br />
+    - خفيف الوزن وسهل النقل.<br />
+  </div>
+
+  <form id="orderForm">
+    <input type="text" id="name" placeholder="الاسم الكامل" required />
+    <input 
+      type="tel" 
+      id="phone" 
+      placeholder="رقم الهاتف (مثلاً: 078XXXXXXXX)" 
+      required 
+    />
+    <select id="city" required>
+      <option value="">اختر المحافظة</option>
+      <option>بغداد</option>
+      <option>البصرة</option>
+      <option>نينوى</option>
+      <option>النجف</option>
+      <option>الأنبار</option>
+      <option>كربلاء</option>
+      <option>ديالى</option>
+      <option>السليمانية</option>
+      <option>كركوك</option>
+      <option>ذي قار</option>
+      <option>المثنى</option>
+      <option>ميسان</option>
+      <option>صلاح الدين</option>
+      <option>الحلة</option>
+      <option>الواسط</option>
+      <option>دهوك</option>
+      <option>أربيل</option>
+      <option>القادسية</option>
+    </select>
+    <input type="text" id="details" placeholder="الحي، الشارع..." required />
+    <button type="submit">إرسال الطلب عبر واتساب</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById("orderForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const city = document.getElementById("city").value;
+    const details = document.getElementById("details").value.trim();
+
+    const msg = `🪑 طلب مقعد تصحيح الظهر من تيب توب:%0Aالاسم: ${name}%0Aرقم الهاتف: ${phone}%0Aالمحافظة: ${city}%0Aتفاصيل: ${details}`;
+
+    if (confirm("هل أنت متأكد من إرسال الطلب عبر واتساب؟")) {
+      const whatsappLink = `https://wa.me/9647838043705?text=${msg}`;
+      window.open(whatsappLink, '_blank');
+    }
+  });
+</script>
+
+</body>
+</html>
+
