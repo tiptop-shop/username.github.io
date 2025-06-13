@@ -7,38 +7,50 @@
   <style>
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f4f8;
+      background-color: #000; /* خلفية سوداء */
       padding: 20px;
       direction: rtl;
-      color: #333;
+      color: #ffd700; /* أصفر */
+      margin: 0;
     }
     .container {
       max-width: 600px;
       margin: auto;
-      background: #fff;
+      background: #111; /* داكن جداً بدل الأبيض */
       padding: 25px 30px;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4); /* ظل أصفر */
+      border: 2px solid #ffd700;
     }
     h2, p {
       text-align: center;
-      color: #2c3e50;
+      color: #ffd700;
+      margin: 10px 0;
+    }
+    .price {
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #ffd700;
+      margin-bottom: 20px;
+      text-shadow: 0 0 6px #ffec00;
     }
     img {
       width: 100%;
       border-radius: 12px;
       margin-bottom: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px #ffd700;
+      border: 2px solid #ffd700;
     }
     .features {
-      background: #eaf6ea;
-      border: 1px solid #c6e0c6;
+      background: #222;
+      border: 1px solid #ffd700;
       padding: 15px;
       border-radius: 10px;
       margin-bottom: 20px;
-      color: #2d6a2d;
+      color: #ffd700;
       font-weight: bold;
-      line-height: 1.5;
+      line-height: 1.6;
     }
     input, select, button {
       width: 100%;
@@ -46,25 +58,31 @@
       margin: 10px 0;
       font-size: 1em;
       border-radius: 6px;
-      border: 1.5px solid #ccc;
-      transition: border-color 0.3s ease;
+      border: 2px solid #ffd700;
+      background-color: #111;
+      color: #ffd700;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
       box-sizing: border-box;
     }
+    input::placeholder, select {
+      color: #ffd700aa;
+    }
     input:focus, select:focus {
-      border-color: #4caf50;
+      border-color: #fff200;
       outline: none;
-      box-shadow: 0 0 6px #81c784;
+      box-shadow: 0 0 8px #fff200;
+      background-color: #222;
     }
     button {
-      background-color: #4caf50;
-      color: white;
+      background-color: #ffd700;
+      color: #000;
       cursor: pointer;
       font-weight: bold;
       border: none;
       transition: background-color 0.3s ease;
     }
     button:hover {
-      background-color: #388e3c;
+      background-color: #e6c200;
     }
   </style>
 </head>
@@ -74,7 +92,10 @@
   <h2>طلب مقعد تصحيح الظهر من تيب توب</h2>
   <p>🟢 تيب توب | واتساب: 07838043705</p>
   
-  <img src="https://i.postimg.cc/yYj5tGZ1/sample-product.jpg" alt="صورة المنتج" />
+  <!-- الصورة الجديدة من Imgur -->
+  <img src="https://i.imgur.com/8xUnwYu.jpg" alt="صورة المنتج" />
+
+  <div class="price">السعر: 20,000 دينار عراقي</div>
 
   <div class="features">
     ميزات المنتج:<br />
@@ -127,7 +148,7 @@
     const city = document.getElementById("city").value;
     const details = document.getElementById("details").value.trim();
 
-    const msg = `🪑 طلب مقعد تصحيح الظهر من تيب توب:%0Aالاسم: ${name}%0Aرقم الهاتف: ${phone}%0Aالمحافظة: ${city}%0Aتفاصيل: ${details}`;
+    const msg = `🪑 طلب مقعد تصحيح الظهر من تيب توب:%0Aالاسم: ${name}%0Aرقم الهاتف: ${phone}%0Aالمحافظة: ${city}%0Aتفاصيل: ${details}%0Aالسعر: 20,000 دينار عراقي`;
 
     if (confirm("هل أنت متأكد من إرسال الطلب عبر واتساب؟")) {
       const whatsappLink = `https://wa.me/9647838043705?text=${msg}`;
@@ -138,4 +159,5 @@
 
 </body>
 </html>
+
 
